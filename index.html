@@ -3,353 +3,303 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#05050a" />
+    <meta name="theme-color" content="#050505" />
     <meta
       name="description"
-      content="Descoperă GALAXY VR ARENA din Ungheni: experiențe VR și zonă PlayStation pentru prieteni, familii și grupuri."
+      content="Monster VR Atrium - experiențe VR premium, shootere, PlayStation, curse RC și motion ride în CC Atrium."
     />
-    <title>GALAXY VR ARENA Ungheni — VR și PlayStation</title>
-    <link rel="stylesheet" href="styles.css?v=6" />
+    <title>Monster VR Atrium - VR, Shootere și Gaming Premium</title>
+    <link rel="stylesheet" href="styles.css?v=8" />
   </head>
   <body>
     <a class="skip-link" href="#main">Sari la conținut</a>
-    <div class="cosmos" aria-hidden="true">
-      <div class="nebula nebula-one"></div>
-      <div class="nebula nebula-two"></div>
-      <div class="stars stars-one"></div>
-      <div class="stars stars-two"></div>
+
+    <div class="ambient" aria-hidden="true">
+      <span class="ambient-glow ambient-glow-lime"></span>
+      <span class="ambient-glow ambient-glow-blue"></span>
+      <span class="ambient-glow ambient-glow-violet"></span>
+      <span class="ambient-grid"></span>
     </div>
 
     <header class="site-header" id="site-header">
-      <div class="container nav-wrap">
-        <a class="brand" href="#top" aria-label="GALAXY VR ARENA — Acasă">
-          <span class="brand-orbit" aria-hidden="true"><span>✦</span></span>
-          <span class="brand-wordmark"><strong>GALAXY</strong><small>VR</small></span>
+      <div class="container nav-shell">
+        <a class="brand" href="#top" aria-label="Monster VR Atrium - Acasă">
+          <span class="brand-mark" aria-hidden="true">
+            <span class="brand-mark-core"></span>
+          </span>
+          <span class="brand-copy">
+            <strong>MONSTER</strong>
+            <small>VR ATRIUM</small>
+          </span>
         </a>
 
         <nav class="desktop-nav" aria-label="Navigație principală">
-          <a href="#experiences">Experiențe</a>
-          <a href="#pricing">Prețuri</a>
+          <a href="#adventure">Distracții</a>
           <a href="#gallery">Galerie</a>
-          <a href="#faq">FAQ</a>
-          <a href="#contact">Contact</a>
+          <a href="#birthdays">Zile de naștere</a>
+          <a href="#contact">Contacte</a>
         </nav>
 
         <div class="nav-actions">
-          <div class="language-switch" aria-label="Selectare limbă">
-            <button class="lang-button is-active" type="button" data-lang="ro">RO</button>
-            <button class="lang-button" type="button" data-lang="ru">RU</button>
+          <div class="social-links" aria-label="Rețele sociale">
+            <a href="https://www.instagram.com/galaxy.vr_arena/" target="_blank" rel="noreferrer" aria-label="Instagram">IG</a>
+            <a href="https://www.tiktok.com/@vrarenaungheni" target="_blank" rel="noreferrer" aria-label="TikTok">TT</a>
+            <a href="#contact" aria-label="Facebook">FB</a>
           </div>
-          <a class="button button-small button-primary desktop-book" href="#book">
-            <svg class="calendar-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2v3M17 2v3M3.5 9h17M5 4h14a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" /></svg>
-            Rezervă acum
-          </a>
+          <div class="language-switch" aria-label="Selectare limbă">
+            <button class="lang-button is-active" type="button" data-lang="RO">RO</button>
+            <button class="lang-button" type="button" data-lang="RU">RU</button>
+            <button class="lang-button" type="button" data-lang="EN">EN</button>
+          </div>
+          <a class="phone-link" href="tel:+37300000000">+373 00 000 000</a>
           <button class="menu-toggle" type="button" aria-label="Deschide meniul" aria-expanded="false">
-            <span></span><span></span>
+            <span></span>
+            <span></span>
           </button>
         </div>
       </div>
 
-      <nav class="mobile-nav" aria-label="Navigație mobilă">
-        <a href="#experiences">Experiențe</a>
-        <a href="#pricing">Prețuri</a>
+      <div class="mobile-panel" aria-label="Navigație mobilă">
+        <a href="#adventure">Distracții</a>
         <a href="#gallery">Galerie</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
-        <a class="button button-primary" href="#book">Rezervă acum</a>
-      </nav>
+        <a href="#birthdays">Zile de naștere</a>
+        <a href="#contact">Contacte</a>
+        <div class="mobile-panel-row">
+          <div class="language-switch" aria-label="Selectare limbă mobilă">
+            <button class="lang-button is-active" type="button" data-lang="RO">RO</button>
+            <button class="lang-button" type="button" data-lang="RU">RU</button>
+            <button class="lang-button" type="button" data-lang="EN">EN</button>
+          </div>
+          <a class="phone-link" href="tel:+37300000000">+373 00 000 000</a>
+        </div>
+      </div>
     </header>
 
     <main id="main">
-      <section class="hero section-grid" id="top">
-        <div class="container hero-grid">
+      <section class="hero" id="top">
+        <div class="hero-bg" aria-hidden="true">
+          <img src="assets/hero-original.jpg" alt="" />
+          <span class="hero-shade"></span>
+        </div>
+        <div class="particle-field" id="particle-field" aria-hidden="true"></div>
+        <span class="neon-line neon-line-one" aria-hidden="true"></span>
+        <span class="neon-line neon-line-two" aria-hidden="true"></span>
+        <span class="light-streak light-streak-one" aria-hidden="true"></span>
+        <span class="light-streak light-streak-two" aria-hidden="true"></span>
+
+        <div class="container hero-content">
           <div class="hero-copy" data-reveal>
-            <div class="eyebrow"><span></span> GALAXY VR ARENA · UNGHENI</div>
-            <h1>Pune realitatea <span class="gradient-text">pe pauză.</span></h1>
+            <p class="hero-kicker">Distracție VR la Atrium</p>
+            <h1>
+              <span class="gradient-text">VR</span>, shootere, curse RC și
+              <span class="gradient-text">Monster Truck.</span>
+            </h1>
             <p class="hero-lead">
-              VR și PlayStation într-un spațiu construit pentru aventură,
-              competiție și divertisment autentic.
+              16 căști VR, shooter zone, labirint laser și motion ride în CC Atrium.
             </p>
             <div class="hero-actions">
-              <a class="button button-primary" href="#book"><span class="button-icon">⌁</span> Rezervă acum</a>
-              <a class="button button-ghost" href="#experiences">Explorează experiențele <span>→</span></a>
+              <a class="button button-primary" href="#adventure">Vezi distracțiile</a>
+              <a class="button button-ghost" href="tel:+37300000000">Sună</a>
             </div>
-            <ul class="hero-benefits" aria-label="Avantaje principale">
-              <li>✓ Pentru adulți și copii</li>
-              <li>✓ Echipamente moderne</li>
-              <li>✓ Construit pentru grupuri</li>
-            </ul>
           </div>
 
-          <div class="hero-visual" data-reveal>
-            <div class="media-glow"></div>
-            <div class="hero-frame">
-              <img class="site-photo photo-hero" src="assets/hero-original.jpg" alt="Doi jucători folosind căști VR în GALAXY VR ARENA" />
-              <div class="hero-frame-overlay"></div>
-              <div class="hero-price-chip">
-                <small>SESIUNI DE LA</small>
-                <strong>€20</strong>
-                <span>/ 30 min</span>
-              </div>
-            </div>
-            <div class="orbit-ring orbit-ring-one"></div>
-            <div class="orbit-ring orbit-ring-two"></div>
+          <div class="hero-stats" aria-label="Statistici Monster VR" data-reveal>
+            <article class="stat-card">
+              <strong>16</strong>
+              <span>căști VR</span>
+            </article>
+            <article class="stat-card">
+              <strong>6</strong>
+              <span>jocuri Motion</span>
+            </article>
+            <article class="stat-card">
+              <strong>8</strong>
+              <span>jucători RC</span>
+            </article>
+            <article class="stat-card">
+              <strong>9D</strong>
+              <span>Motion Ride</span>
+            </article>
           </div>
-        </div>
-        <a class="scroll-cue" href="#trust"><span>EXPLOREAZĂ UNIVERSUL</span><i>⌄</i></a>
-      </section>
-
-      <section class="trust-strip" id="trust" aria-label="Experiențe disponibile">
-        <div class="container trust-grid">
-          <div class="trust-item"><span>✦</span><strong>VR MULTIPLAYER</strong></div>
-          <div class="trust-item"><span>▣</span><strong>PLAYSTATION ZONE</strong></div>
-          <div class="trust-item"><span>♧</span><strong>PRIETENI &amp; FAMILIE</strong></div>
         </div>
       </section>
 
-      <section class="section section-grid" id="experiences">
+      <section class="marquee-band" aria-label="Atracții Monster VR">
+        <div class="marquee-track">
+          <span>VR ZONE</span>
+          <span>MONSTER RC RACING</span>
+          <span>LASER LABYRINTH</span>
+          <span>MOTION RIDE</span>
+          <span>VR ZONE</span>
+          <span>MONSTER RC RACING</span>
+          <span>LASER LABYRINTH</span>
+          <span>MOTION RIDE</span>
+        </div>
+      </section>
+
+      <section class="section adventure-section" id="adventure">
         <div class="container">
           <div class="section-heading" data-reveal>
-            <div class="eyebrow">EXPERIENȚE</div>
-            <h2>Două zone. <span class="gradient-text">Un singur univers.</span></h2>
-            <p>Alege VR Arena, PlayStation Zone sau combină-le într-o singură experiență.</p>
-          </div>
-
-          <div class="experience-grid">
-            <a class="experience-card" href="#vr" data-reveal>
-              <div class="experience-image">
-                <img class="site-photo photo-vr" src="assets/vr-original.jpg" alt="Trei jucători în zona VR" />
-                <span>01 / 02</span>
-              </div>
-              <div class="experience-content">
-                <h3>VR Arena</h3>
-                <p>Intră direct în acțiune. Explorează lumi virtuale, luptă în echipă și simte fiecare mișcare.</p>
-                <strong>Explorează VR <span>→</span></strong>
-              </div>
-            </a>
-
-            <a class="experience-card" href="#ps" data-reveal>
-              <div class="experience-image image-ps">
-                <img class="site-photo photo-playstation" src="assets/playstation-original.jpg" alt="Zona PlayStation cu ecrane și spații de gaming" />
-                <span>02 / 02</span>
-              </div>
-              <div class="experience-content">
-                <h3>PlayStation Zone</h3>
-                <p>Meciuri, provocări și seri de gaming într-o zonă socială creată fără compromis.</p>
-                <strong>Explorează PS Zone <span>→</span></strong>
-              </div>
-            </a>
-
-          </div>
-        </div>
-      </section>
-
-      <section class="feature-section section-grid" id="vr">
-        <div class="container feature-grid">
-          <div class="feature-copy" data-reveal>
-            <div class="eyebrow">VR ARENA</div>
-            <h2>Nu privești jocul. <span class="gradient-text">Intri în el.</span></h2>
+            <p class="eyebrow">Alege-ți aventura</p>
+            <h2>Adrenalină. Acțiune. <span class="gradient-text">VR.</span></h2>
             <p>
-              Mișcare reală, reacții reale și lumi care răspund fiecărui gest. Zona VR este pregătită
-              pentru aventuri solo, jocuri în echipă și provocări care îți cresc pulsul.
+              Intră într-o zonă de gaming construită pentru energie, competiție și seri care se simt
+              ca un trailer de film SF.
             </p>
-            <div class="tag-list">
-              <span>Experiențe multiplayer</span><span>Jocuri pentru diferite niveluri</span>
-              <span>Îndrumare înainte de sesiune</span><span>Spațiu sigur și organizat</span>
-              <span>Potrivit pentru grupuri</span>
-            </div>
-            <a class="button button-primary" href="#book">Rezervă VR Arena</a>
           </div>
-          <div class="feature-media" data-reveal>
-            <img class="site-photo photo-vr" src="assets/vr-original.jpg" alt="Grup care joacă în zona VR" />
+
+          <div class="attraction-grid">
+            <button class="attraction-card attraction-card-wide" type="button" data-attraction="vr-zone" data-reveal>
+              <img src="assets/vr-original.jpg" alt="Jucători în zona VR" />
+              <span class="card-haze"></span>
+              <span class="attraction-tag">16 headset-uri</span>
+              <span class="attraction-content">
+                <strong>VR Zone</strong>
+                <small>Univers multiplayer</small>
+                <span>Experiențe imersive pentru prieteni, familie și echipe care vor să intre direct în acțiune.</span>
+                <em>Vezi detalii</em>
+              </span>
+            </button>
+
+            <button class="attraction-card" type="button" data-attraction="playstation-zone" data-reveal>
+              <img src="assets/playstation-original.jpg" alt="Zonă PlayStation cu lumină neon" />
+              <span class="card-haze"></span>
+              <span class="attraction-tag">dueluri premium</span>
+              <span class="attraction-content">
+                <strong>Playstation Zone</strong>
+                <small>Gaming social</small>
+                <span>Canapele, ecrane mari și atmosferă competitivă pentru sesiuni relaxate sau turnee rapide.</span>
+                <em>Vezi detalii</em>
+              </span>
+            </button>
+
+            <button class="attraction-card" type="button" data-attraction="vr-shooter-zone" data-reveal>
+              <img src="assets/hero-original.jpg" alt="Jucători cu căști VR și controllere" />
+              <span class="card-haze"></span>
+              <span class="attraction-tag">shooter arena</span>
+              <span class="attraction-content">
+                <strong>VR Shooter Zone</strong>
+                <small>Team vs team</small>
+                <span>Sesiuni tactice, reflexe rapide și misiuni VR cu energie de arena futuristă.</span>
+                <em>Vezi detalii</em>
+              </span>
+            </button>
           </div>
         </div>
       </section>
 
-      <section class="feature-section section-grid" id="ps">
-        <div class="container feature-grid feature-reverse">
-          <div class="feature-copy" data-reveal>
-            <div class="eyebrow eyebrow-violet">PLAYSTATION ZONE</div>
-            <h2>Competiția începe <span class="gradient-text">pe canapea.</span></h2>
-            <p>
-              Adu echipa, alege jocul și transformă fiecare meci într-o poveste. O zonă socială
-              pentru dueluri prietenoase, turnee și seri relaxate de gaming.
-            </p>
-            <div class="tag-list">
-              <span>Ecrane mari</span><span>Setup confortabil</span><span>Joc competitiv și cooperativ</span>
-              <span>Ideal pentru grupuri</span><span>Atmosferă socială premium</span>
-            </div>
-            <a class="button button-primary" href="#book">Rezervă PlayStation Zone</a>
-          </div>
-          <div class="feature-media feature-media-ps" data-reveal>
-            <img class="site-photo photo-playstation" src="assets/playstation-original.jpg" alt="Spațiul PlayStation GALAXY VR ARENA" />
-          </div>
-        </div>
-      </section>
-
-      <section class="section pricing-section" id="pricing">
+      <section class="section lineup-section" id="lineup">
         <div class="container">
           <div class="section-heading centered" data-reveal>
-            <div class="eyebrow">PREȚURI</div>
-            <h2>Alege timpul. Noi pregătim <span class="gradient-text">aventura.</span></h2>
+            <p class="eyebrow">Gaming lineup</p>
+            <h2>Cele mai tari noutăți gaming 2026 în VR</h2>
           </div>
-          <div class="pricing-grid">
-            <article class="price-card" data-reveal>
-              <div class="price-duration">◷ 30 MIN</div><div class="price">€20</div>
-              <p>Sesiune scurtă</p><a href="#book">Rezervă</a>
-            </article>
-            <article class="price-card popular" data-reveal>
-              <span class="popular-badge">POPULAR</span>
-              <div class="price-duration">◷ 1 ORĂ</div><div class="price">€30</div>
-              <p>Cea mai aleasă</p><a href="#book">Rezervă</a>
-            </article>
-            <article class="price-card" data-reveal>
-              <div class="price-duration">◷ 1.5 ORE</div><div class="price">€40</div>
-              <p>Pentru grupuri</p><a href="#book">Rezervă</a>
-            </article>
-            <article class="price-card" data-reveal>
-              <div class="price-duration">◷ 2 ORE</div><div class="price">€50</div>
-              <p>Experiență completă</p><a href="#book">Rezervă</a>
-            </article>
+
+          <div class="game-grid" data-reveal>
+            <article class="game-card"><img src="assets/experience-poster.jpg" alt="Arrowsong" /><strong>Arrowsong</strong></article>
+            <article class="game-card"><img src="assets/hero-original.jpg" alt="Aim Assault" /><strong>Aim Assault</strong></article>
+            <article class="game-card"><img src="assets/inside.jpg" alt="Haunted Mansion" /><strong>Haunted Mansion</strong></article>
+            <article class="game-card"><img src="assets/vr-players.jpg" alt="Cyber Shock" /><strong>Cyber Shock</strong></article>
+            <article class="game-card"><img src="assets/vr-original.jpg" alt="Dead Ahead" /><strong>Dead Ahead</strong></article>
+            <article class="game-card"><img src="assets/reception.jpg" alt="Last Stand" /><strong>Last Stand</strong></article>
+            <article class="game-card"><img src="assets/playstation-original.jpg" alt="Quantum Arena" /><strong>Quantum Arena</strong></article>
+            <article class="game-card"><img src="assets/entrance.jpg" alt="Insiders" /><strong>Insiders</strong></article>
+            <article class="game-card"><img src="assets/facade.jpg" alt="Wizard Academy" /><strong>Wizard Academy</strong></article>
+            <article class="game-card"><img src="assets/logo-facade.png" alt="PlushRush" /><strong>PlushRush</strong></article>
+            <article class="game-card"><img src="assets/menu-prices.png" alt="Party Ship" /><strong>Party Ship</strong></article>
+            <article class="game-card"><img src="assets/experience-poster.jpg" alt="Castle Crusade" /><strong>Castle Crusade</strong></article>
+            <article class="game-card"><img src="assets/hero-original.jpg" alt="Faraway Kingdom" /><strong>Faraway Kingdom</strong></article>
+            <article class="game-card"><img src="assets/vr-original.jpg" alt="Terminator Uprising" /><strong>Terminator Uprising</strong></article>
           </div>
-          <p class="pricing-note">
-            Prețurile și disponibilitatea pot varia în funcție de experiență și numărul de participanți.
-            Confirmă detaliile la rezervare.
-          </p>
-          <div class="centered"><a class="button button-primary" href="#book">Verifică disponibilitatea</a></div>
         </div>
       </section>
 
-      <section class="section section-grid" id="gallery">
+      <section class="section gallery-section" id="gallery">
         <div class="container">
           <div class="section-heading" data-reveal>
-            <div class="eyebrow">GALERIE</div>
-            <h2>Realitatea noastră arată deja ca <span class="gradient-text">viitorul.</span></h2>
+            <p class="eyebrow">Galerie</p>
+            <h2>Neon, VR și energie de seară memorabilă.</h2>
           </div>
-          <div class="gallery-grid">
-            <article class="gallery-item gallery-tall" data-reveal><div class="visual-art visual-facade"></div><span>Intrare cosmică</span></article>
-            <article class="gallery-item" data-reveal><div class="visual-art visual-vr"></div><span>VR Arena</span></article>
-            <article class="gallery-item" data-reveal><div class="visual-art visual-orbit"></div><span>Univers digital</span></article>
-            <article class="gallery-item gallery-wide" data-reveal><div class="visual-art visual-reception"></div><span>Recepție premium</span></article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section audience-section">
-        <div class="container">
-          <div class="section-heading" data-reveal>
-            <div class="eyebrow">PENTRU CINE</div>
-            <h2>Toți pot intra <span class="gradient-text">în joc.</span></h2>
-          </div>
-          <div class="audience-grid">
-            <article data-reveal><span>♧</span><h3>Prieteni</h3><p>Competiție, râsete și revanșe la nesfârșit.</p><a href="#book">Solicită detalii →</a></article>
-            <article data-reveal><span>✦</span><h3>Familii</h3><p>Divertisment memorabil pentru adulți și copii.</p><a href="#book">Solicită detalii →</a></article>
-            <article data-reveal><span>☆</span><h3>Aniversări</h3><p>O sărbătoare altfel, într-un spațiu special.</p><a href="#book">Solicită detalii →</a></article>
-            <article data-reveal><span>↗</span><h3>Echipe</h3><p>Provocări sociale și activități de grup.</p><a href="#book">Solicită detalii →</a></article>
+          <div class="gallery-grid" data-reveal>
+            <figure class="gallery-item gallery-large">
+              <img src="assets/menu-prices.png" alt="Recepție gaming cu lumini neon" />
+              <figcaption>Recepție neon</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/vr-players.jpg" alt="Jucători în VR" />
+              <figcaption>VR multiplayer</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/entrance.jpg" alt="Intrare în zona VR" />
+              <figcaption>Intrare Atrium</figcaption>
+            </figure>
           </div>
         </div>
       </section>
 
-      <section class="section booking-section section-grid" id="book">
-        <div class="container booking-grid">
-          <div class="booking-steps" data-reveal>
-            <div class="eyebrow">REZERVARE</div>
-            <h2>Trei pași până la <span class="gradient-text">aventură.</span></h2>
-            <ol>
-              <li><span>01</span><div><strong>Alege experiența</strong><p>VR Arena, PlayStation Zone sau ambele.</p></div></li>
-              <li><span>02</span><div><strong>Alege data și durata</strong><p>Verifică intervalele disponibile.</p></div></li>
-              <li><span>03</span><div><strong>Confirmă rezervarea</strong><p>Primești toate detaliile vizitei.</p></div></li>
-            </ol>
+      <section class="section birthday-section" id="birthdays">
+        <div class="container birthday-panel" data-reveal>
+          <div>
+            <p class="eyebrow">Zile de naștere</p>
+            <h2>Transformă aniversarea într-o misiune VR.</h2>
+            <p>
+              Rezervări pentru grupuri, sesiuni pe echipe, jocuri ușor de ales și o atmosferă care
+              ține invitații conectați de la primul minut.
+            </p>
           </div>
-
-          <form class="booking-form" id="booking-form" novalidate data-reveal>
-            <h3>Solicită o rezervare</h3>
-            <p>Completează datele, iar echipa GALAXY VR ARENA te va contacta pentru confirmare.</p>
-            <div class="form-grid">
-              <label>Nume<input name="name" type="text" autocomplete="name" required /></label>
-              <label>Telefon<input name="phone" type="tel" autocomplete="tel" required /></label>
-              <label>Experiență<select name="experience"><option>VR Arena</option><option>PlayStation Zone</option><option>VR + PlayStation</option></select></label>
-              <label>Participanți<input name="participants" type="number" min="1" value="2" required /></label>
-              <label>Data preferată<input name="date" type="date" required /></label>
-              <label>Ora preferată<input name="time" type="time" required /></label>
-              <label class="form-full">Mesaj (opțional)<textarea name="message" rows="4"></textarea></label>
-            </div>
-            <label class="consent"><input name="consent" type="checkbox" required /> Sunt de acord să fiu contactat pentru confirmarea rezervării.</label>
-            <button class="button button-primary form-submit" type="submit">Trimite cererea</button>
-            <div class="form-message" role="status" aria-live="polite"></div>
-          </form>
+          <a class="button button-primary" href="#contact">Cere disponibilitate</a>
         </div>
       </section>
 
-      <section class="section faq-section" id="faq">
-        <div class="container faq-container">
-          <div class="section-heading centered" data-reveal>
-            <div class="eyebrow">ÎNTREBĂRI FRECVENTE</div>
-            <h2>Bun de știut înainte de <span class="gradient-text">vizită.</span></h2>
-          </div>
-          <div class="faq-list" data-reveal>
-            <details open><summary>Am nevoie de experiență anterioară în VR?<span>⌄</span></summary><p>Nu. Înainte de fiecare sesiune primești îndrumare pentru a începe rapid și în siguranță.</p></details>
-            <details><summary>Pot participa și copiii?<span>⌄</span></summary><p>Da, însă regulile de vârstă diferă în funcție de experiență. Confirmă detaliile la rezervare.</p></details>
-            <details><summary>Câți jucători pot juca în același timp?<span>⌄</span></summary><p>Capacitatea depinde de experiența aleasă. Echipa îți recomandă configurația potrivită grupului.</p></details>
-            <details><summary>Este necesară rezervarea în avans?<span>⌄</span></summary><p>Rezervarea este recomandată pentru a garanta intervalul dorit.</p></details>
-            <details><summary>Pot rezerva pentru un grup sau aniversare?<span>⌄</span></summary><p>Trimite o solicitare cu numărul de persoane pentru a primi o ofertă adaptată.</p></details>
-            <details><summary>Unde este GALAXY VR ARENA?<span>⌄</span></summary><p>Locația este în Ungheni. Adresa completă va fi afișată după confirmarea datelor oficiale.</p></details>
-          </div>
-        </div>
-      </section>
-
-      <section class="section contact-section section-grid" id="contact">
+      <section class="section contact-section" id="contact">
         <div class="container contact-grid">
           <div class="contact-copy" data-reveal>
-            <div class="eyebrow">CONTACT</div>
-            <h2>Următoarea ta aventură începe în <span class="gradient-text">Ungheni.</span></h2>
-            <dl>
-              <div><dt>ADRESĂ</dt><dd>[ADRESA COMPLETĂ]</dd></div>
-              <div><dt>TELEFON</dt><dd>[NUMĂR DE TELEFON]</dd></div>
-              <div><dt>PROGRAM</dt><dd>[PROGRAM]</dd></div>
-            </dl>
-            <div class="contact-actions">
-              <a class="button button-primary" href="#book">Rezervă</a>
-              <a class="button button-ghost" href="https://www.instagram.com/galaxy.vr_arena/" target="_blank" rel="noreferrer">Instagram</a>
-              <a class="button button-ghost" href="https://www.tiktok.com/@vrarenaungheni" target="_blank" rel="noreferrer">TikTok</a>
+            <p class="eyebrow">Contacte</p>
+            <h2>Rezervă următoarea rundă în CC Atrium.</h2>
+            <p>Spune-ne câți sunteți, ce zonă vreți și când ajungeți. Echipa confirmă intervalul.</p>
+            <div class="contact-list">
+              <a href="tel:+37300000000"><span>Telefon</span><strong>+373 00 000 000</strong></a>
+              <a href="https://www.instagram.com/galaxy.vr_arena/" target="_blank" rel="noreferrer"><span>Instagram</span><strong>@galaxy.vr_arena</strong></a>
+              <a href="https://www.tiktok.com/@vrarenaungheni" target="_blank" rel="noreferrer"><span>TikTok</span><strong>@vrarenaungheni</strong></a>
             </div>
           </div>
-          <div class="map-placeholder" data-reveal>
-            <div class="map-grid"></div><span>⌖</span><strong>Harta urmează</strong>
-            <p>Integrarea hărții se activează după confirmarea adresei oficiale.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="final-cta">
-        <div class="final-glow" aria-hidden="true"></div>
-        <div class="container centered" data-reveal>
-          <div class="eyebrow">EȘTI GATA?</div>
-          <h2>Ești gata să ieși <span class="gradient-text">din realitate?</span></h2>
-          <p>Alege experiența, adu-ți echipa și rezervă-ți următoarea aventură la GALAXY VR ARENA.</p>
-          <div class="hero-actions centered-actions">
-            <a class="button button-primary" href="#book">Rezervă acum</a>
-            <a class="button button-ghost" href="#contact">Contactează-ne</a>
+          <div class="contact-card" data-reveal>
+            <span class="contact-card-glow"></span>
+            <strong>CC Atrium</strong>
+            <p>VR Zone, Playstation Zone, shooter zone, labirint laser și motion ride.</p>
+            <a class="button button-ghost" href="tel:+37300000000">Sună acum</a>
           </div>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="container footer-grid">
-        <div>
-          <a class="brand footer-brand" href="#top"><span class="brand-orbit">✦</span><span class="brand-wordmark"><strong>GALAXY</strong><small>VR ARENA</small></span></a>
-          <p>VR și PlayStation într-un univers creat pentru aventură, competiție și momente memorabile.</p>
-        </div>
-        <div><h4>NAVIGARE</h4><a href="#experiences">Experiențe</a><a href="#pricing">Prețuri</a><a href="#gallery">Galerie</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></div>
-        <div><h4>URMĂREȘTE-NE</h4><a href="https://www.instagram.com/galaxy.vr_arena/" target="_blank" rel="noreferrer">Instagram</a><a href="https://www.tiktok.com/@vrarenaungheni" target="_blank" rel="noreferrer">TikTok</a></div>
+      <div class="container footer-inner">
+        <a class="brand" href="#top" aria-label="Monster VR Atrium - Acasă">
+          <span class="brand-mark" aria-hidden="true"><span class="brand-mark-core"></span></span>
+          <span class="brand-copy"><strong>MONSTER</strong><small>VR ATRIUM</small></span>
+        </a>
+        <p>© 2026 Monster VR Atrium. Experiențe gaming premium în CC Atrium.</p>
       </div>
-      <div class="container footer-bottom"><span>© 2026 GALAXY VR ARENA. Toate drepturile rezervate.</span><span>Politica de confidențialitate · Termeni</span></div>
     </footer>
 
-    <a class="mobile-floating-book" href="#book">Rezervă</a>
+    <div class="modal" id="attraction-modal" aria-hidden="true">
+      <div class="modal-backdrop" data-modal-close></div>
+      <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button class="modal-close" type="button" data-modal-close aria-label="Închide detaliile">×</button>
+        <div class="modal-media">
+          <img id="modal-image" src="assets/vr-original.jpg" alt="" />
+        </div>
+        <div class="modal-body">
+          <p class="eyebrow" id="modal-tag">VR Zone</p>
+          <h3 id="modal-title">VR Zone</h3>
+          <p id="modal-description"></p>
+          <div class="modal-thumbs" id="modal-thumbs" aria-label="Imagini atracție"></div>
+        </div>
+      </div>
+    </div>
 
     <div class="toast" role="status" aria-live="polite"></div>
-    <script src="script.js?v=6"></script>
+    <script src="script.js?v=8"></script>
   </body>
 </html>
