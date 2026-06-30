@@ -82,7 +82,6 @@ const translations = {
       aria: "Atracții GALAXY VR",
       vr: "VR ZONE",
       rc: "GALAXY RC RACING",
-      laser: "LASER LABYRINTH",
       motion: "MOTION RIDE",
     },
     adventure: {
@@ -231,7 +230,6 @@ const translations = {
       aria: "Развлечения GALAXY VR",
       vr: "VR ЗОНА",
       rc: "GALAXY RC ГОНКИ",
-      laser: "ЛАЗЕРНЫЙ ЛАБИРИНТ",
       motion: "MOTION RIDE",
     },
     adventure: {
@@ -380,7 +378,6 @@ const translations = {
       aria: "GALAXY VR attractions",
       vr: "VR ZONE",
       rc: "GALAXY RC RACING",
-      laser: "LASER LABYRINTH",
       motion: "MOTION RIDE",
     },
     adventure: {
