@@ -10,9 +10,15 @@ const modalTitle = document.querySelector("#modal-title");
 const modalTag = document.querySelector("#modal-tag");
 const modalDescription = document.querySelector("#modal-description");
 const modalThumbs = document.querySelector("#modal-thumbs");
+const quickDock = document.querySelector(".mobile-action-dock");
+const dockLinks = document.querySelectorAll(".mobile-action-dock a");
+const motionCards = document.querySelectorAll(".attraction-card, .game-card, .gallery-item");
+const tiltCards = document.querySelectorAll(".attraction-card");
+const mobileMotionQuery = window.matchMedia("(max-width: 640px)");
 let toastTimer;
 let lastFocusedElement;
 let ticking = false;
+let activeObserver;
 
 const attractionDetails = {
   "vr-zone": {
@@ -46,7 +52,15 @@ function showToast(message) {
 }
 
 function updateHeader() {
-  header.classList.toggle("is-scrolled", window.scrollY > 28);
+  const scrolled = window.scrollY > 28;
+  header.classList.toggle("is-scrolled", scrolled);
+  quickDock?.classList.toggle("is-visible", window.scrollY > 360);
+}
+
+function updateScrollProgress() {
+  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = maxScroll > 0 ? Math.min(window.scrollY / maxScroll, 1) : 0;
+  document.documentElement.style.setProperty("--scroll-progress", progress.toFixed(4));
 }
 
 function updateParallax() {
@@ -60,6 +74,7 @@ function onScroll() {
   if (ticking) return;
   ticking = true;
   window.requestAnimationFrame(() => {
+    updateScrollProgress();
     updateParallax();
     ticking = false;
   });
@@ -129,10 +144,58 @@ function createParticles() {
   particleField.appendChild(fragment);
 }
 
+function setupMobileActiveStates() {
+  if (activeObserver) activeObserver.disconnect();
+  motionCards.forEach((card) => card.classList.remove("is-active"));
+
+  if (!("IntersectionObserver" in window) || !mobileMotionQuery.matches) return;
+
+  activeObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        entry.target.classList.toggle("is-active", entry.isIntersecting);
+      });
+    },
+    { threshold: 0.58, rootMargin: "-16% 0px -24%" },
+  );
+
+  motionCards.forEach((card) => activeObserver.observe(card));
+}
+
+function setupDesktopTilt() {
+  if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+
+  tiltCards.forEach((card) => {
+    card.addEventListener("pointermove", (event) => {
+      const rect = card.getBoundingClientRect();
+      const x = (event.clientX - rect.left) / rect.width - 0.5;
+      const y = (event.clientY - rect.top) / rect.height - 0.5;
+      card.style.setProperty("--tilt-x", `${(-y * 3.2).toFixed(2)}deg`);
+      card.style.setProperty("--tilt-y", `${(x * 4.2).toFixed(2)}deg`);
+    });
+
+    card.addEventListener("pointerleave", () => {
+      card.style.setProperty("--tilt-x", "0deg");
+      card.style.setProperty("--tilt-y", "0deg");
+    });
+  });
+}
+
 updateHeader();
+updateScrollProgress();
 updateParallax();
 createParticles();
+setupMobileActiveStates();
+setupDesktopTilt();
 window.addEventListener("scroll", onScroll, { passive: true });
+window.addEventListener("resize", () => {
+  updateScrollProgress();
+  setupMobileActiveStates();
+});
+
+if (mobileMotionQuery.addEventListener) {
+  mobileMotionQuery.addEventListener("change", setupMobileActiveStates);
+}
 
 menuToggle.addEventListener("click", () => {
   const isOpen = header.classList.toggle("menu-active");
@@ -157,8 +220,19 @@ document.querySelectorAll(".lang-button").forEach((button) => {
   });
 });
 
-document.querySelectorAll("[data-reveal]").forEach((element) => {
+document.querySelectorAll("[data-reveal]").forEach((element, index) => {
   element.classList.add("reveal-ready");
+  element.style.setProperty("--reveal-index", index % 8);
+});
+
+document.querySelectorAll(".stat-card, .game-card").forEach((element, index) => {
+  element.style.setProperty("--reveal-index", index % 8);
+});
+
+dockLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    dockLinks.forEach((item) => item.classList.toggle("is-active", item === link));
+  });
 });
 
 if ("IntersectionObserver" in window) {
