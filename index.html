@@ -9,10 +9,10 @@
       content="GALAXY VR - experiențe VR premium, shootere, PlayStation, curse RC și motion ride."
     />
     <title>GALAXY VR - VR, Shootere și Gaming Premium</title>
-    <link rel="stylesheet" href="styles.css?v=8" />
+    <link rel="stylesheet" href="styles.css?v=9" />
   </head>
   <body>
-    <a class="skip-link" href="#main">Sari la conținut</a>
+    <a class="skip-link" href="#main" data-i18n="skip">Sari la conținut</a>
 
     <div class="ambient" aria-hidden="true">
       <span class="ambient-glow ambient-glow-lime"></span>
@@ -23,7 +23,7 @@
 
     <header class="site-header" id="site-header">
       <div class="container nav-shell">
-        <a class="brand" href="#top" aria-label="GALAXY VR - Acasă">
+        <a class="brand" href="#top" aria-label="GALAXY VR - Acasă" data-i18n-aria-label="brand.home">
           <span class="brand-mark" aria-hidden="true">
             <span class="brand-mark-core"></span>
           </span>
@@ -33,44 +33,91 @@
           </span>
         </a>
 
-        <nav class="desktop-nav" aria-label="Navigație principală">
-          <a href="#adventure">Distracții</a>
-          <a href="#gallery">Galerie</a>
-          <a href="#birthdays">Zile de naștere</a>
-          <a href="#contact">Contacte</a>
+        <nav class="desktop-nav" aria-label="Navigație principală" data-i18n-aria-label="nav.aria">
+          <a href="#adventure" data-i18n="nav.fun">Distracții</a>
+          <a href="#gallery" data-i18n="nav.gallery">Galerie</a>
+          <a href="#birthdays" data-i18n="nav.birthdays">Zile de naștere</a>
+          <a href="#contact" data-i18n="nav.contacts">Contacte</a>
         </nav>
 
         <div class="nav-actions">
-          <div class="social-links" aria-label="Rețele sociale">
-            <a href="https://www.instagram.com/galaxy.vr_arena/" target="_blank" rel="noreferrer" aria-label="Instagram">IG</a>
-            <a href="https://www.tiktok.com/@vrarenaungheni" target="_blank" rel="noreferrer" aria-label="TikTok">TT</a>
-            <a href="#contact" aria-label="Facebook">FB</a>
+          <div class="social-links" aria-label="Rețele sociale" data-i18n-aria-label="social.aria">
+            <a
+              class="social-link social-link--instagram"
+              href="https://www.instagram.com/galaxy.vr_arena?igsh=cmZzMzNkd3h4OGF2"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="5.2" y="5.2" width="13.6" height="13.6" rx="4.2"></rect>
+                <circle cx="12" cy="12" r="3.1"></circle>
+                <circle cx="16.3" cy="7.7" r="1"></circle>
+              </svg>
+            </a>
+            <a
+              class="social-link social-link--tiktok"
+              href="https://www.tiktok.com/@vrarenaungheni?_r=1&_t=ZS-97eR6Tdp67G"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="TikTok"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path class="tiktok-cyan" d="M15.9 4.2c.35 2.15 1.68 3.58 3.86 3.72v3.05a7.05 7.05 0 0 1-3.82-1.17v5.72a5.18 5.18 0 1 1-4.62-5.15v3.13a2.12 2.12 0 1 0 1.43 2V4.2h3.15Z"></path>
+                <path class="tiktok-red" d="M15.9 4.2c.35 2.15 1.68 3.58 3.86 3.72v3.05a7.05 7.05 0 0 1-3.82-1.17v5.72a5.18 5.18 0 1 1-4.62-5.15v3.13a2.12 2.12 0 1 0 1.43 2V4.2h3.15Z"></path>
+                <path class="tiktok-white" d="M15.9 4.2c.35 2.15 1.68 3.58 3.86 3.72v3.05a7.05 7.05 0 0 1-3.82-1.17v5.72a5.18 5.18 0 1 1-4.62-5.15v3.13a2.12 2.12 0 1 0 1.43 2V4.2h3.15Z"></path>
+              </svg>
+            </a>
           </div>
-          <div class="language-switch" aria-label="Selectare limbă">
+          <div class="language-switch" aria-label="Selectare limbă" data-i18n-aria-label="language.aria">
             <button class="lang-button is-active" type="button" data-lang="RO">RO</button>
             <button class="lang-button" type="button" data-lang="RU">RU</button>
             <button class="lang-button" type="button" data-lang="EN">EN</button>
           </div>
           <a class="phone-link" href="tel:+37300000000">+373 00 000 000</a>
-          <button class="menu-toggle" type="button" aria-label="Deschide meniul" aria-expanded="false">
+          <button class="menu-toggle" type="button" aria-label="Deschide meniul" aria-expanded="false" data-i18n-aria-label="menu.open">
             <span></span>
             <span></span>
           </button>
         </div>
       </div>
 
-      <div class="mobile-panel" aria-label="Navigație mobilă">
+      <div class="mobile-panel" aria-label="Navigație mobilă" data-i18n-aria-label="nav.mobileAria">
         <span class="mobile-panel-glow" aria-hidden="true"></span>
-        <a href="#adventure">Distracții</a>
-        <a href="#gallery">Galerie</a>
-        <a href="#birthdays">Zile de naștere</a>
-        <a href="#contact">Contacte</a>
-        <div class="mobile-socials" aria-label="Rețele sociale mobile">
-          <a href="https://www.instagram.com/galaxy.vr_arena/" target="_blank" rel="noreferrer">Instagram</a>
-          <a href="https://www.tiktok.com/@vrarenaungheni" target="_blank" rel="noreferrer">TikTok</a>
+        <a href="#adventure" data-i18n="nav.fun">Distracții</a>
+        <a href="#gallery" data-i18n="nav.gallery">Galerie</a>
+        <a href="#birthdays" data-i18n="nav.birthdays">Zile de naștere</a>
+        <a href="#contact" data-i18n="nav.contacts">Contacte</a>
+        <div class="mobile-socials" aria-label="Rețele sociale mobile" data-i18n-aria-label="social.mobileAria">
+          <a
+            class="mobile-social mobile-social--instagram"
+            href="https://www.instagram.com/galaxy.vr_arena?igsh=cmZzMzNkd3h4OGF2"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="5.2" y="5.2" width="13.6" height="13.6" rx="4.2"></rect>
+              <circle cx="12" cy="12" r="3.1"></circle>
+              <circle cx="16.3" cy="7.7" r="1"></circle>
+            </svg>
+            <span>Instagram</span>
+          </a>
+          <a
+            class="mobile-social mobile-social--tiktok"
+            href="https://www.tiktok.com/@vrarenaungheni?_r=1&_t=ZS-97eR6Tdp67G"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path class="tiktok-cyan" d="M15.9 4.2c.35 2.15 1.68 3.58 3.86 3.72v3.05a7.05 7.05 0 0 1-3.82-1.17v5.72a5.18 5.18 0 1 1-4.62-5.15v3.13a2.12 2.12 0 1 0 1.43 2V4.2h3.15Z"></path>
+              <path class="tiktok-red" d="M15.9 4.2c.35 2.15 1.68 3.58 3.86 3.72v3.05a7.05 7.05 0 0 1-3.82-1.17v5.72a5.18 5.18 0 1 1-4.62-5.15v3.13a2.12 2.12 0 1 0 1.43 2V4.2h3.15Z"></path>
+              <path class="tiktok-white" d="M15.9 4.2c.35 2.15 1.68 3.58 3.86 3.72v3.05a7.05 7.05 0 0 1-3.82-1.17v5.72a5.18 5.18 0 1 1-4.62-5.15v3.13a2.12 2.12 0 1 0 1.43 2V4.2h3.15Z"></path>
+            </svg>
+            <span>TikTok</span>
+          </a>
         </div>
         <div class="mobile-panel-row">
-          <div class="language-switch" aria-label="Selectare limbă mobilă">
+          <div class="language-switch" aria-label="Selectare limbă mobilă" data-i18n-aria-label="language.mobileAria">
             <button class="lang-button is-active" type="button" data-lang="RO">RO</button>
             <button class="lang-button" type="button" data-lang="RU">RU</button>
             <button class="lang-button" type="button" data-lang="EN">EN</button>
@@ -94,105 +141,110 @@
 
         <div class="container hero-content">
           <div class="hero-copy" data-reveal>
-            <p class="hero-kicker">Distracție VR la GALAXY VR</p>
+            <p class="hero-kicker" data-i18n="hero.kicker">Distracție VR la GALAXY VR</p>
             <h1>
-              <span class="gradient-text">VR</span>, shootere, curse RC și
-              <span class="gradient-text">Galaxy Truck.</span>
+              <span class="gradient-text" data-i18n="hero.titleVr">VR</span><span data-i18n="hero.titleMiddle">, shootere, curse RC și </span>
+              <span class="gradient-text" data-i18n="hero.titleEnd">Galaxy Truck.</span>
             </h1>
-            <p class="hero-lead">
+            <p class="hero-lead" data-i18n="hero.lead">
               16 căști VR, shooter zone, labirint laser și motion ride.
             </p>
             <div class="hero-actions">
-              <a class="button button-primary" href="#adventure">Vezi distracțiile</a>
-              <a class="button button-ghost" href="tel:+37300000000">Sună</a>
+              <a class="button button-primary" href="#adventure" data-i18n="hero.primary">Vezi distracțiile</a>
+              <a class="button button-ghost" href="tel:+37300000000" data-i18n="hero.call">Sună</a>
             </div>
             <div class="hero-mobile-console" aria-hidden="true">
-              <span class="console-chip console-chip-live">Live VR</span>
-              <span class="console-chip">Laser</span>
+              <span class="console-chip console-chip-live" data-i18n="console.live">Live VR</span>
+              <span class="console-chip" data-i18n="console.laser">Laser</span>
               <span class="console-chip">9D</span>
               <span class="console-pulse"></span>
             </div>
           </div>
 
-          <div class="hero-stats" aria-label="Statistici GALAXY VR" data-reveal>
+          <div class="hero-stats" aria-label="Statistici GALAXY VR" data-i18n-aria-label="stats.aria" data-reveal>
             <article class="stat-card">
               <strong>16</strong>
-              <span>căști VR</span>
+              <span data-i18n="stats.headsets">căști VR</span>
             </article>
             <article class="stat-card">
               <strong>6</strong>
-              <span>jocuri Motion</span>
+              <span data-i18n="stats.motionGames">jocuri Motion</span>
             </article>
             <article class="stat-card">
               <strong>8</strong>
-              <span>jucători RC</span>
+              <span data-i18n="stats.rcPlayers">jucători RC</span>
             </article>
             <article class="stat-card">
               <strong>9D</strong>
-              <span>Motion Ride</span>
+              <span data-i18n="stats.motionRide">Motion Ride</span>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="marquee-band" aria-label="Atracții GALAXY VR">
+      <section class="marquee-band" aria-label="Atracții GALAXY VR" data-i18n-aria-label="marquee.aria">
+        <div class="marquee-fleet" aria-hidden="true">
+          <span class="spacecraft spacecraft-one"></span>
+          <span class="spacecraft spacecraft-two"></span>
+          <span class="spacecraft spacecraft-three"></span>
+          <span class="spacecraft spacecraft-four"></span>
+        </div>
         <div class="marquee-track">
-          <span>VR ZONE</span>
-          <span>GALAXY RC RACING</span>
-          <span>LASER LABYRINTH</span>
-          <span>MOTION RIDE</span>
-          <span>VR ZONE</span>
-          <span>GALAXY RC RACING</span>
-          <span>LASER LABYRINTH</span>
-          <span>MOTION RIDE</span>
+          <span data-i18n="marquee.vr">VR ZONE</span>
+          <span data-i18n="marquee.rc">GALAXY RC RACING</span>
+          <span data-i18n="marquee.laser">LASER LABYRINTH</span>
+          <span data-i18n="marquee.motion">MOTION RIDE</span>
+          <span data-i18n="marquee.vr">VR ZONE</span>
+          <span data-i18n="marquee.rc">GALAXY RC RACING</span>
+          <span data-i18n="marquee.laser">LASER LABYRINTH</span>
+          <span data-i18n="marquee.motion">MOTION RIDE</span>
         </div>
       </section>
 
       <section class="section adventure-section" id="adventure">
         <div class="container">
           <div class="section-heading" data-reveal>
-            <p class="eyebrow">Alege-ți aventura</p>
-            <h2>Adrenalină. Acțiune. <span class="gradient-text">VR.</span></h2>
-            <p>
-              Intră într-o zonă de gaming construită pentru energie, competiție și seri care se simt
-              ca un trailer de film SF.
+            <p class="eyebrow" data-i18n="adventure.eyebrow">Alege-ți aventura</p>
+            <h2><span data-i18n="adventure.titleStart">Adrenalină. Acțiune. </span><span class="gradient-text" data-i18n="adventure.titleVr">VR.</span></h2>
+            <p data-i18n="adventure.subtitle">
+              Intră într-o zonă de gaming construită pentru energie, competiție și seri care se simt ca un trailer de film SF.
             </p>
           </div>
 
           <div class="attraction-grid">
             <button class="attraction-card attraction-card-wide" type="button" data-attraction="vr-zone" data-reveal>
-              <img src="assets/vr-original.jpg" alt="Jucători în zona VR" />
+              <img src="assets/vr-original.jpg" alt="Jucători în zona VR" data-i18n-alt="attraction.vr.alt" />
               <span class="card-haze"></span>
-              <span class="attraction-tag">16 headset-uri</span>
+              <span class="attraction-tag" data-i18n="attraction.vr.tag">16 headset-uri</span>
               <span class="attraction-content">
-                <strong>VR Zone</strong>
-                <small>Univers multiplayer</small>
-                <span>Experiențe imersive pentru prieteni, familie și echipe care vor să intre direct în acțiune.</span>
-                <em>Vezi detalii</em>
+                <strong data-i18n="attraction.vr.title">VR Zone</strong>
+                <small data-i18n="attraction.vr.sub">Univers multiplayer</small>
+                <span data-i18n="attraction.vr.desc">Experiențe imersive pentru prieteni, familie și echipe care vor să intre direct în acțiune.</span>
+                <em data-i18n="attraction.cta">Vezi detalii</em>
               </span>
             </button>
 
             <button class="attraction-card" type="button" data-attraction="playstation-zone" data-reveal>
-              <img src="assets/playstation-original.jpg" alt="Zonă PlayStation cu lumină neon" />
+              <img src="assets/playstation-original.jpg" alt="Zonă PlayStation cu lumină neon" data-i18n-alt="attraction.ps.alt" />
               <span class="card-haze"></span>
-              <span class="attraction-tag">dueluri premium</span>
+              <span class="attraction-tag" data-i18n="attraction.ps.tag">dueluri premium</span>
               <span class="attraction-content">
-                <strong>Playstation Zone</strong>
-                <small>Gaming social</small>
-                <span>Canapele, ecrane mari și atmosferă competitivă pentru sesiuni relaxate sau turnee rapide.</span>
-                <em>Vezi detalii</em>
+                <strong data-i18n="attraction.ps.title">Playstation Zone</strong>
+                <small data-i18n="attraction.ps.sub">Gaming social</small>
+                <span data-i18n="attraction.ps.desc">Canapele, ecrane mari și atmosferă competitivă pentru sesiuni relaxate sau turnee rapide.</span>
+                <em data-i18n="attraction.cta">Vezi detalii</em>
               </span>
             </button>
 
             <button class="attraction-card" type="button" data-attraction="vr-shooter-zone" data-reveal>
-              <img src="assets/hero-original.jpg" alt="Jucători cu căști VR și controllere" />
+              <img src="assets/hero-original.jpg" alt="Jucători cu căști VR și controllere" data-i18n-alt="attraction.shooter.alt" />
               <span class="card-haze"></span>
-              <span class="attraction-tag">shooter arena</span>
+              <span class="attraction-tag" data-i18n="attraction.shooter.tag">shooter arena</span>
               <span class="attraction-content">
-                <strong>VR Shooter Zone</strong>
-                <small>Team vs team</small>
-                <span>Sesiuni tactice, reflexe rapide și misiuni VR cu energie de arena futuristă.</span>
-                <em>Vezi detalii</em>
+                <strong data-i18n="attraction.shooter.title">VR Shooter Zone</strong>
+                <small data-i18n="attraction.shooter.sub">Team vs team</small>
+                <span data-i18n="attraction.shooter.desc">Sesiuni tactice, reflexe rapide și misiuni VR cu energie de arena futuristă.</span>
+                <em data-i18n="attraction.cta">Vezi detalii</em>
               </span>
             </button>
           </div>
@@ -202,8 +254,8 @@
       <section class="section lineup-section" id="lineup">
         <div class="container">
           <div class="section-heading centered" data-reveal>
-            <p class="eyebrow">Gaming lineup</p>
-            <h2>Cele mai tari noutăți gaming 2026 în VR</h2>
+            <p class="eyebrow" data-i18n="lineup.eyebrow">Gaming lineup</p>
+            <h2 data-i18n="lineup.title">Cele mai tari noutăți gaming 2026 în VR</h2>
           </div>
 
           <div class="game-grid" data-reveal>
@@ -228,21 +280,21 @@
       <section class="section gallery-section" id="gallery">
         <div class="container">
           <div class="section-heading" data-reveal>
-            <p class="eyebrow">Galerie</p>
-            <h2>Neon, VR și energie de seară memorabilă.</h2>
+            <p class="eyebrow" data-i18n="gallery.eyebrow">Galerie</p>
+            <h2 data-i18n="gallery.title">Neon, VR și energie de seară memorabilă.</h2>
           </div>
           <div class="gallery-grid" data-reveal>
             <figure class="gallery-item gallery-large">
-              <img src="assets/menu-prices.png" alt="Recepție gaming cu lumini neon" />
-              <figcaption>Recepție neon</figcaption>
+              <img src="assets/menu-prices.png" alt="Recepție gaming cu lumini neon" data-i18n-alt="gallery.receptionAlt" />
+              <figcaption data-i18n="gallery.reception">Recepție neon</figcaption>
             </figure>
             <figure class="gallery-item">
-              <img src="assets/vr-players.jpg" alt="Jucători în VR" />
-              <figcaption>VR multiplayer</figcaption>
+              <img src="assets/vr-players.jpg" alt="Jucători în VR" data-i18n-alt="gallery.playersAlt" />
+              <figcaption data-i18n="gallery.multiplayer">VR multiplayer</figcaption>
             </figure>
             <figure class="gallery-item">
-              <img src="assets/entrance.jpg" alt="Intrare în zona VR" />
-              <figcaption>Intrare GALAXY VR</figcaption>
+              <img src="assets/entrance.jpg" alt="Intrare în zona VR" data-i18n-alt="gallery.entranceAlt" />
+              <figcaption data-i18n="gallery.entrance">Intrare GALAXY VR</figcaption>
             </figure>
           </div>
         </div>
@@ -251,34 +303,33 @@
       <section class="section birthday-section" id="birthdays">
         <div class="container birthday-panel" data-reveal>
           <div>
-            <p class="eyebrow">Zile de naștere</p>
-            <h2>Transformă aniversarea într-o misiune VR.</h2>
-            <p>
-              Rezervări pentru grupuri, sesiuni pe echipe, jocuri ușor de ales și o atmosferă care
-              ține invitații conectați de la primul minut.
+            <p class="eyebrow" data-i18n="birthday.eyebrow">Zile de naștere</p>
+            <h2 data-i18n="birthday.title">Transformă aniversarea într-o misiune VR.</h2>
+            <p data-i18n="birthday.text">
+              Rezervări pentru grupuri, sesiuni pe echipe, jocuri ușor de ales și o atmosferă care ține invitații conectați de la primul minut.
             </p>
           </div>
-          <a class="button button-primary" href="#contact">Cere disponibilitate</a>
+          <a class="button button-primary" href="#contact" data-i18n="birthday.cta">Cere disponibilitate</a>
         </div>
       </section>
 
       <section class="section contact-section" id="contact">
         <div class="container contact-grid">
           <div class="contact-copy" data-reveal>
-            <p class="eyebrow">Contacte</p>
-            <h2>Rezervă următoarea rundă la GALAXY VR.</h2>
-            <p>Spune-ne câți sunteți, ce zonă vreți și când ajungeți. Echipa confirmă intervalul.</p>
+            <p class="eyebrow" data-i18n="contact.eyebrow">Contacte</p>
+            <h2 data-i18n="contact.title">Rezervă următoarea rundă la GALAXY VR.</h2>
+            <p data-i18n="contact.text">Spune-ne câți sunteți, ce zonă vreți și când ajungeți. Echipa confirmă intervalul.</p>
             <div class="contact-list">
-              <a href="tel:+37300000000"><span>Telefon</span><strong>+373 00 000 000</strong></a>
-              <a href="https://www.instagram.com/galaxy.vr_arena/" target="_blank" rel="noreferrer"><span>Instagram</span><strong>@galaxy.vr_arena</strong></a>
-              <a href="https://www.tiktok.com/@vrarenaungheni" target="_blank" rel="noreferrer"><span>TikTok</span><strong>@vrarenaungheni</strong></a>
+              <a href="tel:+37300000000"><span data-i18n="contact.phone">Telefon</span><strong>+373 00 000 000</strong></a>
+              <a href="https://www.instagram.com/galaxy.vr_arena?igsh=cmZzMzNkd3h4OGF2" target="_blank" rel="noreferrer"><span>Instagram</span><strong>@galaxy.vr_arena</strong></a>
+              <a href="https://www.tiktok.com/@vrarenaungheni?_r=1&_t=ZS-97eR6Tdp67G" target="_blank" rel="noreferrer"><span>TikTok</span><strong>@vrarenaungheni</strong></a>
             </div>
           </div>
           <div class="contact-card" data-reveal>
             <span class="contact-card-glow"></span>
             <strong>GALAXY VR</strong>
-            <p>VR Zone, Playstation Zone, shooter zone, labirint laser și motion ride.</p>
-            <a class="button button-ghost" href="tel:+37300000000">Sună acum</a>
+            <p data-i18n="contact.cardText">VR Zone, Playstation Zone, shooter zone, labirint laser și motion ride.</p>
+            <a class="button button-ghost" href="tel:+37300000000" data-i18n="contact.callNow">Sună acum</a>
           </div>
         </div>
       </section>
@@ -286,24 +337,24 @@
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <a class="brand" href="#top" aria-label="GALAXY VR - Acasă">
+        <a class="brand" href="#top" aria-label="GALAXY VR - Acasă" data-i18n-aria-label="brand.home">
           <span class="brand-mark" aria-hidden="true"><span class="brand-mark-core"></span></span>
           <span class="brand-copy"><strong>GALAXY</strong><small>VR</small></span>
         </a>
-        <p>© 2026 GALAXY VR. Experiențe gaming premium.</p>
+        <p data-i18n="footer.copy">© 2026 GALAXY VR. Experiențe gaming premium.</p>
       </div>
     </footer>
 
-    <nav class="mobile-action-dock" aria-label="Acțiuni rapide">
-      <a href="#adventure"><span>VR</span><strong>Distracții</strong></a>
-      <a href="tel:+37300000000"><span>Call</span><strong>Sună</strong></a>
-      <a href="#contact"><span>Go</span><strong>Contact</strong></a>
+    <nav class="mobile-action-dock" aria-label="Acțiuni rapide" data-i18n-aria-label="dock.aria">
+      <a href="#adventure"><span>VR</span><strong data-i18n="dock.fun">Distracții</strong></a>
+      <a href="tel:+37300000000"><span>Call</span><strong data-i18n="dock.call">Sună</strong></a>
+      <a href="#contact"><span>Go</span><strong data-i18n="dock.contact">Contact</strong></a>
     </nav>
 
     <div class="modal" id="attraction-modal" aria-hidden="true">
       <div class="modal-backdrop" data-modal-close></div>
       <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-        <button class="modal-close" type="button" data-modal-close aria-label="Închide detaliile">×</button>
+        <button class="modal-close" type="button" data-modal-close aria-label="Închide detaliile" data-i18n-aria-label="modal.close">×</button>
         <div class="modal-media">
           <img id="modal-image" src="assets/vr-original.jpg" alt="" />
         </div>
@@ -311,12 +362,12 @@
           <p class="eyebrow" id="modal-tag">VR Zone</p>
           <h3 id="modal-title">VR Zone</h3>
           <p id="modal-description"></p>
-          <div class="modal-thumbs" id="modal-thumbs" aria-label="Imagini atracție"></div>
+          <div class="modal-thumbs" id="modal-thumbs" aria-label="Imagini atracție" data-i18n-aria-label="modal.thumbs"></div>
         </div>
       </div>
     </div>
 
     <div class="toast" role="status" aria-live="polite"></div>
-    <script src="script.js?v=8"></script>
+    <script src="script.js?v=9"></script>
   </body>
 </html>

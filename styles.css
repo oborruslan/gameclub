@@ -368,29 +368,80 @@ a {
   gap: 8px;
 }
 
-.social-links a {
-  width: 34px;
-  height: 34px;
+.social-link {
+  position: relative;
+  width: 36px;
+  height: 36px;
   display: grid;
   place-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 50%;
-  color: rgba(255, 255, 255, 0.78);
   background: rgba(255, 255, 255, 0.035);
-  font-size: 11px;
-  font-weight: 900;
   transition:
-    color 0.2s ease,
     border-color 0.2s ease,
     box-shadow 0.2s ease,
     transform 0.2s ease;
 }
 
-.social-links a:hover,
-.social-links a:focus-visible {
-  color: var(--lime);
-  border-color: rgba(183, 255, 41, 0.42);
-  box-shadow: 0 0 18px rgba(183, 255, 41, 0.22);
+.social-link svg,
+.mobile-social svg {
+  position: relative;
+  z-index: 1;
+  width: 20px;
+  height: 20px;
+}
+
+.social-link--instagram,
+.mobile-social--instagram {
+  background:
+    radial-gradient(circle at 32% 104%, #feda75 0 18%, transparent 34%),
+    radial-gradient(circle at 22% 88%, #fa7e1e 0 24%, transparent 42%),
+    radial-gradient(circle at 74% 18%, #4f5bd5 0 24%, transparent 44%),
+    linear-gradient(135deg, #f58529 0%, #dd2a7b 42%, #8134af 72%, #515bd4 100%);
+  box-shadow: 0 0 18px rgba(221, 42, 123, 0.25);
+}
+
+.social-link--instagram svg,
+.mobile-social--instagram svg {
+  fill: none;
+  stroke: #fff;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.social-link--tiktok,
+.mobile-social--tiktok {
+  background:
+    radial-gradient(circle at 25% 30%, rgba(37, 244, 238, 0.28), transparent 44%),
+    radial-gradient(circle at 75% 72%, rgba(254, 44, 85, 0.3), transparent 42%),
+    #050505;
+  box-shadow:
+    0 0 18px rgba(37, 244, 238, 0.15),
+    0 0 20px rgba(254, 44, 85, 0.12);
+}
+
+.tiktok-cyan {
+  fill: #25f4ee;
+  transform: translate(-1.4px, 1px);
+}
+
+.tiktok-red {
+  fill: #fe2c55;
+  transform: translate(1.4px, -1px);
+}
+
+.tiktok-white {
+  fill: #fff;
+}
+
+.social-link:hover,
+.social-link:focus-visible {
+  border-color: rgba(255, 255, 255, 0.38);
+  box-shadow:
+    0 0 22px rgba(255, 255, 255, 0.12),
+    0 0 30px rgba(183, 255, 41, 0.16);
   transform: translateY(-2px);
 }
 
@@ -815,30 +866,151 @@ a {
 
 .marquee-band {
   position: relative;
+  min-height: 96px;
   overflow: hidden;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  border-top: 1px solid rgba(183, 255, 41, 0.12);
+  border-bottom: 1px solid rgba(183, 255, 41, 0.14);
   background:
-    radial-gradient(circle at 50% 0, rgba(183, 255, 41, 0.08), transparent 54%),
+    radial-gradient(circle at 12% 50%, rgba(183, 255, 41, 0.13), transparent 32%),
+    radial-gradient(circle at 76% 0, rgba(24, 185, 255, 0.1), transparent 38%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 45%, rgba(183, 255, 41, 0.035)),
     #050505;
-  box-shadow: 0 0 34px rgba(183, 255, 41, 0.08);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    inset 0 -1px 0 rgba(183, 255, 41, 0.1),
+    0 0 44px rgba(183, 255, 41, 0.1);
+}
+
+.marquee-band::before,
+.marquee-band::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.marquee-band::before {
+  opacity: 0.22;
+  background-image:
+    linear-gradient(rgba(183, 255, 41, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(24, 185, 255, 0.06) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(90deg, transparent, #000 18%, #000 82%, transparent);
+}
+
+.marquee-band::after {
+  background: linear-gradient(90deg, #050505, transparent 14%, transparent 86%, #050505);
+  z-index: 4;
 }
 
 .marquee-track {
+  position: relative;
+  z-index: 2;
   width: max-content;
   display: flex;
-  gap: 42px;
-  padding: 18px 0;
+  gap: 58px;
+  padding: 31px 0;
   animation: marquee 26s linear infinite;
 }
 
 .marquee-track span {
-  color: rgba(255, 255, 255, 0.82);
-  font-size: 14px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(1rem, 1.6vw, 1.35rem);
   font-weight: 950;
-  letter-spacing: 0.24em;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
   white-space: nowrap;
+  text-shadow: 0 0 18px rgba(255, 255, 255, 0.18);
+}
+
+.marquee-fleet {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.spacecraft {
+  position: absolute;
+  left: -110px;
+  width: 54px;
+  height: 18px;
+  filter: drop-shadow(0 0 16px rgba(183, 255, 41, 0.62));
+  animation: spacecraft-flight 5s linear infinite;
+}
+
+.spacecraft::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 32px;
+  height: 14px;
+  border: 1px solid rgba(183, 255, 41, 0.88);
+  border-radius: 999px 999px 999px 2px;
+  background:
+    radial-gradient(circle at 76% 50%, #fff 0 2px, transparent 3px),
+    linear-gradient(90deg, rgba(24, 185, 255, 0.8), rgba(183, 255, 41, 0.95));
+  clip-path: polygon(0 50%, 28% 0, 100% 16%, 100% 84%, 28% 100%);
+  transform: translateY(-50%);
+}
+
+.spacecraft::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 28px;
+  width: 78px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(183, 255, 41, 0.86), rgba(24, 185, 255, 0.4));
+  box-shadow:
+    0 0 12px rgba(183, 255, 41, 0.72),
+    0 0 24px rgba(24, 185, 255, 0.28);
+  transform: translateY(-50%);
+}
+
+.spacecraft-one {
+  top: 18px;
+  animation-duration: 4.6s;
+}
+
+.spacecraft-two {
+  top: 53px;
+  animation-delay: -1.4s;
+  animation-duration: 5.8s;
+  --ship-scale: 0.82;
+}
+
+.spacecraft-three {
+  top: 34px;
+  animation-delay: -3.1s;
+  animation-duration: 3.9s;
+}
+
+.spacecraft-four {
+  top: 70px;
+  animation-delay: -4.4s;
+  animation-duration: 6.4s;
+  --ship-scale: 0.68;
+  opacity: 0.76;
+}
+
+@keyframes spacecraft-flight {
+  0% {
+    transform: translate3d(-110px, 0, 0) rotate(-5deg) scale(var(--ship-scale, 1));
+    opacity: 0;
+  }
+  8%,
+  86% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(calc(100vw + 150px), -10px, 0) rotate(-5deg) scale(var(--ship-scale, 1));
+    opacity: 0;
+  }
 }
 
 @keyframes marquee {
@@ -1625,7 +1797,7 @@ a {
     transform: translateY(0) scale(1);
   }
 
-  .mobile-panel a:not(.phone-link) {
+  .mobile-panel > a:not(.phone-link) {
     position: relative;
     z-index: 1;
     padding: 15px 16px;
@@ -1644,29 +1816,29 @@ a {
       border-color 0.2s ease;
   }
 
-  .mobile-panel a:not(.phone-link):hover {
+  .mobile-panel > a:not(.phone-link):hover {
     border-color: rgba(183, 255, 41, 0.24);
     background: rgba(183, 255, 41, 0.08);
   }
 
-  .site-header.menu-active .mobile-panel a:not(.phone-link) {
+  .site-header.menu-active .mobile-panel > a:not(.phone-link) {
     opacity: 1;
     transform: translateY(0);
   }
 
-  .site-header.menu-active .mobile-panel a:nth-of-type(1) {
+  .site-header.menu-active .mobile-panel > a:nth-of-type(1) {
     transition-delay: 0.03s;
   }
 
-  .site-header.menu-active .mobile-panel a:nth-of-type(2) {
+  .site-header.menu-active .mobile-panel > a:nth-of-type(2) {
     transition-delay: 0.06s;
   }
 
-  .site-header.menu-active .mobile-panel a:nth-of-type(3) {
+  .site-header.menu-active .mobile-panel > a:nth-of-type(3) {
     transition-delay: 0.09s;
   }
 
-  .site-header.menu-active .mobile-panel a:nth-of-type(4) {
+  .site-header.menu-active .mobile-panel > a:nth-of-type(4) {
     transition-delay: 0.12s;
   }
 
@@ -1677,6 +1849,43 @@ a {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 8px;
     margin-top: 6px;
+  }
+
+  .mobile-social {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 950;
+    opacity: 0;
+    transform: translateY(12px);
+    transition:
+      opacity 0.24s ease 0.15s,
+      transform 0.24s ease 0.15s,
+      box-shadow 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  .site-header.menu-active .mobile-social {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .mobile-social:hover,
+  .mobile-social:focus-visible {
+    border-color: rgba(255, 255, 255, 0.34);
+    box-shadow: 0 0 24px rgba(255, 255, 255, 0.1);
+  }
+
+  .mobile-social svg {
+    width: 19px;
+    height: 19px;
+    flex: 0 0 auto;
   }
 
   .mobile-panel-row {
@@ -1812,7 +2021,7 @@ a {
     top: 78px;
   }
 
-  .mobile-panel a:not(.phone-link) {
+  .mobile-panel > a:not(.phone-link) {
     min-height: 58px;
     display: flex;
     align-items: center;
