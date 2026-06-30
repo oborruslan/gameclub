@@ -1,8 +1,8 @@
-# Monster VR Atrium Website
+# GALAXY VR Website
 
 Site static, responsive, fără dependențe și compatibil cu GitHub Pages.
 
-Pagina este construită ca un website premium dark/neon pentru un centru VR din CC Atrium: hero cinematic, header glassmorphism, marquee, carduri de atracții cu modal și gaming lineup 2026.
+Pagina este construită ca un website premium dark/neon pentru un centru VR: hero cinematic, header glassmorphism, marquee, carduri de atracții cu modal și gaming lineup 2026.
 
 ## Fișiere principale
 
