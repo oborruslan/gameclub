@@ -14,17 +14,21 @@ const quickDock = document.querySelector(".mobile-action-dock");
 const dockLinks = document.querySelectorAll(".mobile-action-dock a");
 const motionCards = document.querySelectorAll(".attraction-card, .game-card, .gallery-item");
 const tiltCards = document.querySelectorAll(".attraction-card");
-const spotlightTargets = document.querySelectorAll(
-  ".button, .stat-card, .attraction-card, .game-card, .gallery-item, .birthday-panel, .contact-card, .contact-list a, .social-link, .mobile-social, .mobile-action-dock a",
-);
 const mobileMotionQuery = window.matchMedia("(max-width: 640px)");
 const finePointerQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
+const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+const saveData = Boolean(connection?.saveData);
 const supportedLanguages = ["RO", "RU", "EN"];
 
 let toastTimer;
+let resizeTimer;
 let lastFocusedElement;
 let ticking = false;
 let activeObserver;
+let desktopTiltReady = false;
+let spotlightsReady = false;
+let supportsWebP;
 let currentLanguage = "RO";
 let activeAttractionKey = null;
 
@@ -506,6 +510,32 @@ function storeLanguage(lang) {
   }
 }
 
+function runWhenIdle(callback, timeout = 900) {
+  if ("requestIdleCallback" in window) {
+    window.requestIdleCallback(callback, { timeout });
+    return;
+  }
+
+  window.setTimeout(callback, Math.min(timeout, 300));
+}
+
+function canUseWebP() {
+  if (typeof supportsWebP === "boolean") return supportsWebP;
+
+  try {
+    const canvas = document.createElement("canvas");
+    supportsWebP = canvas.toDataURL("image/webp").startsWith("data:image/webp");
+  } catch {
+    supportsWebP = false;
+  }
+
+  return supportsWebP;
+}
+
+function optimizedAsset(src) {
+  return canUseWebP() ? src.replace(/\.(jpe?g|png)$/i, ".webp") : src;
+}
+
 function showToast(message) {
   window.clearTimeout(toastTimer);
   toast.textContent = message;
@@ -561,8 +591,10 @@ function updateScrollProgress() {
 }
 
 function updateParallax() {
-  if (!heroImage) return;
-  const offset = Math.min(window.scrollY * 0.08, 70);
+  if (!heroImage || reducedMotionQuery.matches || saveData) return;
+  const speed = mobileMotionQuery.matches ? 0.04 : 0.08;
+  const maxOffset = mobileMotionQuery.matches ? 34 : 70;
+  const offset = Math.min(window.scrollY * speed, maxOffset);
   heroImage.style.transform = `translate3d(0, ${offset}px, 0) scale(1.06)`;
 }
 
@@ -589,7 +621,7 @@ function renderModal(key) {
   const images = attractionAssets[key];
   if (!details || !images) return;
 
-  modalImage.src = images[0];
+  modalImage.src = optimizedAsset(images[0]);
   modalImage.alt = details.title;
   modalTag.textContent = details.tag;
   modalTitle.textContent = details.title;
@@ -600,9 +632,9 @@ function renderModal(key) {
     const thumb = document.createElement("button");
     thumb.type = "button";
     thumb.className = "modal-thumb";
-    thumb.innerHTML = `<img src="${src}" alt="${details.title} ${translate("modal.thumbnail")} ${index + 1}" />`;
+    thumb.innerHTML = `<img src="${optimizedAsset(src)}" alt="${details.title} ${translate("modal.thumbnail")} ${index + 1}" loading="lazy" decoding="async" />`;
     thumb.addEventListener("click", () => {
-      modalImage.src = src;
+      modalImage.src = optimizedAsset(src);
     });
     modalThumbs.appendChild(thumb);
   });
@@ -628,9 +660,9 @@ function closeModal() {
 }
 
 function createParticles() {
-  if (!particleField) return;
+  if (!particleField || particleField.children.length || reducedMotionQuery.matches || saveData) return;
   const fragment = document.createDocumentFragment();
-  const particleCount = window.matchMedia("(max-width: 640px)").matches ? 24 : 42;
+  const particleCount = mobileMotionQuery.matches ? 10 : 18;
 
   for (let index = 0; index < particleCount; index += 1) {
     const particle = document.createElement("span");
@@ -667,7 +699,8 @@ function setupMobileActiveStates() {
 }
 
 function setupDesktopTilt() {
-  if (!finePointerQuery.matches) return;
+  if (desktopTiltReady || !finePointerQuery.matches || reducedMotionQuery.matches || saveData) return;
+  desktopTiltReady = true;
 
   tiltCards.forEach((card) => {
     card.addEventListener("pointermove", (event) => {
@@ -686,7 +719,12 @@ function setupDesktopTilt() {
 }
 
 function setupInteractiveSpotlights() {
-  if (!finePointerQuery.matches) return;
+  if (spotlightsReady || !finePointerQuery.matches || reducedMotionQuery.matches || saveData) return;
+  spotlightsReady = true;
+
+  const spotlightTargets = document.querySelectorAll(
+    ".button, .stat-card, .attraction-card, .game-card, .gallery-item, .birthday-panel, .contact-card, .contact-list a, .social-link, .mobile-social, .mobile-action-dock a",
+  );
 
   spotlightTargets.forEach((element) => {
     element.addEventListener("pointermove", (event) => {
@@ -708,14 +746,27 @@ applyLanguage(getStoredLanguage(), { silent: true });
 updateHeader();
 updateScrollProgress();
 updateParallax();
-createParticles();
 setupMobileActiveStates();
-setupDesktopTilt();
-setupInteractiveSpotlights();
+
+const startDecorativeEffects = () => {
+  runWhenIdle(() => {
+    createParticles();
+    setupDesktopTilt();
+    setupInteractiveSpotlights();
+  }, 1200);
+};
+
+if (document.readyState === "complete") {
+  startDecorativeEffects();
+} else {
+  window.addEventListener("load", startDecorativeEffects, { once: true });
+}
+
 window.addEventListener("scroll", onScroll, { passive: true });
 window.addEventListener("resize", () => {
   updateScrollProgress();
-  setupMobileActiveStates();
+  window.clearTimeout(resizeTimer);
+  resizeTimer = window.setTimeout(setupMobileActiveStates, 160);
 });
 
 if (mobileMotionQuery.addEventListener) {

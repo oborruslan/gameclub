@@ -145,8 +145,8 @@ a {
   min-width: 520px;
   min-height: 520px;
   border-radius: 50%;
-  opacity: 0.11;
-  filter: blur(22px);
+  opacity: 0.08;
+  filter: blur(14px);
   transform: translate3d(0, 0, 0);
   animation: ambient-orbit 22s var(--premium-ease) infinite alternate;
 }
@@ -174,8 +174,8 @@ a {
   width: 620px;
   height: 620px;
   border-radius: 50%;
-  filter: blur(120px);
-  opacity: 0.18;
+  filter: blur(86px);
+  opacity: 0.14;
 }
 
 .ambient-glow-lime {
@@ -188,20 +188,20 @@ a {
   top: -210px;
   right: 5%;
   background: var(--blue);
-  opacity: 0.14;
+  opacity: 0.11;
 }
 
 .ambient-glow-violet {
   right: -260px;
   bottom: 6%;
   background: var(--violet);
-  opacity: 0.12;
+  opacity: 0.1;
 }
 
 .ambient-grid {
   position: absolute;
   inset: 0;
-  opacity: 0.16;
+  opacity: 0.12;
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
@@ -675,6 +675,12 @@ a {
   overflow: hidden;
 }
 
+.hero-bg picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .hero-bg img {
   width: 100%;
   height: 100%;
@@ -1022,6 +1028,8 @@ a {
   align-content: center;
   gap: 4px;
   overflow: hidden;
+  contain: layout paint;
+  backface-visibility: hidden;
   padding: 24px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 22px;
@@ -1265,6 +1273,15 @@ a {
   padding: 118px 0;
 }
 
+.adventure-section,
+.lineup-section,
+.gallery-section,
+.birthday-section,
+.contact-section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
+}
+
 .section::before {
   content: "";
   position: absolute;
@@ -1346,6 +1363,8 @@ a {
   box-shadow: var(--shadow);
   cursor: pointer;
   text-align: left;
+  contain: layout paint;
+  backface-visibility: hidden;
   transform: perspective(1200px) translateY(var(--card-lift)) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
   transition:
     transform 0.25s ease,
@@ -1401,6 +1420,12 @@ a {
   transition:
     transform 0.55s ease,
     filter 0.35s ease;
+}
+
+.attraction-card picture {
+  position: absolute;
+  inset: 0;
+  display: block;
 }
 
 .card-haze {
@@ -1551,6 +1576,8 @@ a {
   position: relative;
   min-width: 0;
   overflow: hidden;
+  contain: layout paint;
+  backface-visibility: hidden;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 20px;
   background: #111;
@@ -1596,6 +1623,10 @@ a {
   object-fit: cover;
   filter: brightness(0.72) saturate(1.02);
   transition: filter 0.25s ease, transform 0.35s ease;
+}
+
+.game-card picture {
+  display: block;
 }
 
 .game-card strong {
@@ -1648,6 +1679,8 @@ a {
   min-height: 0;
   overflow: hidden;
   margin: 0;
+  contain: layout paint;
+  backface-visibility: hidden;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-lg);
   background: #111;
@@ -1678,6 +1711,12 @@ a {
   filter: brightness(0.76) saturate(1.08);
   transform: scale(1.01);
   transition: transform 0.55s var(--premium-ease), filter 0.35s ease;
+}
+
+.gallery-item picture {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .gallery-item figcaption {
@@ -1719,6 +1758,7 @@ a {
   justify-content: space-between;
   gap: 32px;
   overflow: hidden;
+  contain: layout paint;
   padding: clamp(32px, 6vw, 70px);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-xl);
@@ -1776,6 +1816,7 @@ a {
   justify-content: space-between;
   gap: 20px;
   overflow: hidden;
+  contain: layout paint;
   padding: 18px 20px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 18px;
@@ -1829,6 +1870,8 @@ a {
   overflow: hidden;
   display: grid;
   align-content: end;
+  contain: layout paint;
+  backface-visibility: hidden;
   min-height: 420px;
   padding: 34px;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -1836,6 +1879,9 @@ a {
   background:
     linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.82)),
     url("assets/entrance.jpg") center / cover;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.82)),
+    image-set(url("assets/entrance.webp") type("image/webp"), url("assets/entrance.jpg") type("image/jpeg")) center / cover;
   box-shadow: var(--shadow);
   transition: transform 0.3s var(--premium-ease), border-color 0.25s ease, box-shadow 0.25s ease;
 }
