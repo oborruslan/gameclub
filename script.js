@@ -14,7 +14,11 @@ const quickDock = document.querySelector(".mobile-action-dock");
 const dockLinks = document.querySelectorAll(".mobile-action-dock a");
 const motionCards = document.querySelectorAll(".attraction-card, .game-card, .gallery-item");
 const tiltCards = document.querySelectorAll(".attraction-card");
+const spotlightTargets = document.querySelectorAll(
+  ".button, .stat-card, .attraction-card, .game-card, .gallery-item, .birthday-panel, .contact-card, .contact-list a, .social-link, .mobile-social, .mobile-action-dock a",
+);
 const mobileMotionQuery = window.matchMedia("(max-width: 640px)");
+const finePointerQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
 const supportedLanguages = ["RO", "RU", "EN"];
 
 let toastTimer;
@@ -663,7 +667,7 @@ function setupMobileActiveStates() {
 }
 
 function setupDesktopTilt() {
-  if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+  if (!finePointerQuery.matches) return;
 
   tiltCards.forEach((card) => {
     card.addEventListener("pointermove", (event) => {
@@ -681,6 +685,25 @@ function setupDesktopTilt() {
   });
 }
 
+function setupInteractiveSpotlights() {
+  if (!finePointerQuery.matches) return;
+
+  spotlightTargets.forEach((element) => {
+    element.addEventListener("pointermove", (event) => {
+      const rect = element.getBoundingClientRect();
+      const x = ((event.clientX - rect.left) / rect.width) * 100;
+      const y = ((event.clientY - rect.top) / rect.height) * 100;
+      element.style.setProperty("--pointer-x", `${Math.max(0, Math.min(100, x)).toFixed(2)}%`);
+      element.style.setProperty("--pointer-y", `${Math.max(0, Math.min(100, y)).toFixed(2)}%`);
+    });
+
+    element.addEventListener("pointerleave", () => {
+      element.style.setProperty("--pointer-x", "50%");
+      element.style.setProperty("--pointer-y", "50%");
+    });
+  });
+}
+
 applyLanguage(getStoredLanguage(), { silent: true });
 updateHeader();
 updateScrollProgress();
@@ -688,6 +711,7 @@ updateParallax();
 createParticles();
 setupMobileActiveStates();
 setupDesktopTilt();
+setupInteractiveSpotlights();
 window.addEventListener("scroll", onScroll, { passive: true });
 window.addEventListener("resize", () => {
   updateScrollProgress();
